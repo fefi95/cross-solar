@@ -1,0 +1,67 @@
+[
+{
+  "model": "api.panel",
+  "pk": 1,
+  "fields": {
+    "brand": "Panel1",
+    "serial": "AAAA1111BBBB2222",
+    "latitude": "12.345678",
+    "longitude": "98.765543"
+  }
+},
+{
+  "model": "api.panel",
+  "pk": 2,
+  "fields": {
+    "brand": "Panel2",
+    "serial": "AAAA1111BBBB2223",
+    "latitude": "12.345678",
+    "longitude": "98.765543"
+  }
+},
+{
+  "model": "api.onehourelectricity",
+  "pk": 1,
+  "fields": {
+    "panel": 1,
+    "kilo_watt": 100,
+    "date_time": "2018-08-30T10:00:00Z"
+  }
+},
+{
+  "model": "api.onehourelectricity",
+  "pk": 2,
+  "fields": {
+    "panel": 1,
+    "kilo_watt": 200,
+    "date_time": "2018-08-20T10:00:00Z"
+  }
+},
+{
+  "model": "api.onehourelectricity",
+  "pk": 3,
+  "fields": {
+    "panel": 1,
+    "kilo_watt": 2000,
+    "date_time": "2018-08-30T11:00:00Z"
+  }
+},
+{
+  "model": "api.onehourelectricity",
+  "pk": 4,
+  "fields": {
+    "panel": 1,
+    "kilo_watt": 2000,
+    "date_time": "2018-08-30T15:00:00Z"
+  }
+},
+{
+  "model": "api.onehourelectricity",
+  "pk": 5,
+  "fields": {
+    "panel": 1,
+    "kilo_watt": 5000,
+    "date_time": "2018-08-20T15:00:00Z"
+  }
+}
+]
