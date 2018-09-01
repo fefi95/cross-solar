@@ -6,6 +6,8 @@ from .models import Panel
 
 class PanelTestCase(APITestCase):
     def setUp(self):
+        # I decided to use a fixture to make the tests code more readable 
+        # and the fixtures file can be modificated to add any data you want
         call_command("loaddata", "cross_solar/fixtures/db.json")
 
     def check_day_stats(self, data, date, sum, avg, min, max):
