@@ -26,7 +26,6 @@ class HourAnalyticsView(APIView):
 
 class DayAnalyticsView(APIView):
     def get(self, request, panelid):
-        # Please implement this method to return Panel's daily analytics data
         queryset = OneHourElectricity.objects.filter(panel_id=panelid)\
                 .annotate(datetime=TruncDay('date_time')).values('datetime') \
                 .annotate(
@@ -35,12 +34,4 @@ class DayAnalyticsView(APIView):
                     maximum=Max('kilo_watt'),
                     minimum=Min('kilo_watt')
                 )
-        print(queryset)
-        # return Response([{
-        #     "date_time": "[date for the day]",
-        #     "sum": 0,
-        #     "average": 0,
-        #     "maximum": 0,
-        #     "minimum": 0
-        # }])
-        return Response(queryset)
+        return Response(list(queryset))

@@ -1,11 +1,19 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
+
 class Panel(models.Model):
     brand = models.CharField(max_length=200)
-    serial = models.CharField(max_length=200)
-    latitude = models.DecimalField(decimal_places=6,max_digits=8)
-    longitude = models.DecimalField(decimal_places=6,max_digits=9)
+    # The description said it had to be exactly 16 chars
+    serial = models.CharField(max_length=16)
+    latitude = models.DecimalField(
+        decimal_places=6, max_digits=8,
+        validators=[MinValueValidator(-90), MaxValueValidator(90)]
+    )
+    longitude = models.DecimalField(
+        decimal_places=6, max_digits=9,
+        validators=[MinValueValidator(-180), MaxValueValidator(180)]
+    )
     def __str__(self):
         return "Brand: {0}, Serial: {1} ".format(self.brand, self.serial)
 
